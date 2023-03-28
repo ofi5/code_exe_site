@@ -9,3 +9,10 @@ npm install -g @angular/cli
 https://github.com/codexe-utd/codexe.git
 5. sudo npm install -g n  
 6. sudo n 14.20  
+
+
+
+# Push an existing repository from the command line
+git remote add origin https://github.com/codexe-utd/codexe.git
+git branch -M main
+git push -u origin main
