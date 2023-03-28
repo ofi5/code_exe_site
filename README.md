@@ -1,5 +1,6 @@
 # codexe
-Please follow following steps to checkout :
+
+## Please follow following steps to checkout :
 
 1. Install Node.JS and NPM
 2. Install Angular CLI
@@ -12,7 +13,7 @@ https://github.com/codexe-utd/codexe.git
 
 
 
-# Push an existing repository from the command line
-git remote add origin https://github.com/codexe-utd/codexe.git
-git branch -M main
-git push -u origin main
+## Push an existing repository from the command line
+1. git remote add origin https://github.com/codexe-utd/codexe.git
+2. git branch -M main
+3. git push -u origin main
