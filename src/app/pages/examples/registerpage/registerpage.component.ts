@@ -9,6 +9,8 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
   focus;
   focus1;
   focus2;
+  focus3;
+  focus4;
   constructor() {}
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e) {
