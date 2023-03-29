@@ -9,9 +9,9 @@
         class="navbar-brand"
         [routerLink]="['/home']"
         placement="bottom"
-        tooltip="Designed and Coded by Creative Tim"
+        tooltip="Designed and Coded by Code.exe"
       >
-        <span> BLK• </span> Design System Angular
+        <span> Code•exe </span> UTD
       </a>
       <button
         aria-controls="navigation-index"
@@ -54,19 +54,19 @@
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            href="https://twitter.com/CreativeTim"
+            href=""
             placement="bottom"
             target="_blank"
             tooltip="Follow us on Twitter"
           >
-            <i class="fab fa-twitter"> </i>
-            <p class="d-lg-none d-xl-none">Twitter</p>
+            <i class="fab fa-linkedin"> </i>
+            <p class="d-lg-none d-xl-none">LinkedIn</p>
           </a>
         </li>
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            href="https://www.facebook.com/CreativeTim"
+            href=""
             placement="bottom"
             target="_blank"
             tooltip="Like us on Facebook"
@@ -78,7 +78,7 @@
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            href="https://www.instagram.com/CreativeTimOfficial"
+            href=""
             placement="bottom"
             target="_blank"
             tooltip="Follow us on Instagram"
@@ -88,15 +88,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']"> Back to Kit </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="https://github.com/creativetimofficial/blk-design-system-angular/issues"
-          >
-            Have an issue?
-          </a>
+          <a class="nav-link" [routerLink]="['/home']"> Back to Home </a>
         </li>
       </ul>
     </div>
@@ -112,14 +104,16 @@
             <div class="square square-7" id="square7"></div>
             <div class="square square-8" id="square8"></div>
             <div class="card card-register">
-              <div class="card-header">
+              <div class="card-header" style="
+              padding-bottom: 0px;
+              ">
                 <img
                   alt="Card image"
                   class="card-img"
                   src="assets/img/square1-red.png"
                 />
 
-                <h4 class="card-title">Register</h4>
+                <h3 class="card-title">Member Sign-up</h3>
               </div>
               <div class="card-body">
                 <form class="form">
@@ -151,7 +145,7 @@
                     </div>
                     <input
                       class="form-control"
-                      placeholder="Email"
+                      placeholder="UTD Email"
                       type="text"
                       (focus)="focus1 = true"
                       (blur)="focus1 = false"
@@ -163,35 +157,188 @@
                   >
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <i class="tim-icons icon-lock-circle"> </i>
+                        <i class="tim-icons icon-badge"> </i>
                       </div>
                     </div>
                     <input
                       class="form-control"
-                      placeholder="Password"
+                      placeholder="When did you join UTD (eg. Fall 2022)"
                       type="text"
                       (focus)="focus2 = true"
                       (blur)="focus2 = false"
                     />
                   </div>
+                  <div
+                  class="input-group"
+                  [ngClass]="{ 'input-group-focus': focus3 === true }"
+                  >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="tim-icons icon-mobile"> </i>
+                      </div>
+                    </div>
+                    <input
+                      class="form-control"
+                      placeholder="Phone Number"
+                      type="text"
+                      (focus)="focus3 = true"
+                      (blur)="focus3 = false"
+                    />
+                  </div>
+                  <div
+                  class="input-group"
+                  [ngClass]="{ 'input-group-focus': focus4 === true }"
+                  >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="tim-icons icon-notes"> </i>
+                      </div>
+                    </div>
+                    <input
+                      class="form-control"
+                      placeholder="Major"
+                      type="text"
+                      (focus)="focus4 = true"
+                      (blur)="focus4 = false"
+                    />
+                  </div>
+                  <div class="input-group">
+                  Your Primary Purpose for joining Code.exe?
+                  </div>
                   <div class="form-check text-left">
                     <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" />
-
-                      <span class="form-check-sign"> </span> I agree to the
-                      <a href="javascript:void(0)"> terms and conditions </a> .
+                      <input
+                        checked="checked"
+                        class="form-check-input"
+                        type="checkbox"
+                      />
+                      <span class="form-check-sign"> </span> To Learn Programming languages
+                    </label>&nbsp;&nbsp;
+                  
+                    <label class="form-check-label">
+                      <input
+                     
+                        class="form-check-input"
+                        type="checkbox"
+                      />
+                      <span class="form-check-sign"> </span> Hackathons
+                    </label>&nbsp;&nbsp;
+                  
+                    <label class="form-check-label">
+                      <input
+                     
+                        class="form-check-input"
+                        type="checkbox"
+                      />
+                      <span class="form-check-sign"> </span> Networking
+                    </label>&nbsp;&nbsp;
+                 
+                    <label class="form-check-label">
+                      <input
+                     
+                        class="form-check-input"
+                        type="checkbox"
+                      />
+                      <span class="form-check-sign"> </span> to become an officer at Code.exe
                     </label>
-                  </div>
+                  </div><br>
+                  <div class="input-group">
+                    Are you an officer at Code.exe?
+                    </div>
+                  <div class="form-check form-check-radio">
+                    <label class="form-check-label">
+                      <input
+                        class="form-check-input"
+                        id="exampleRadios1"
+                        name="codexeOfc"
+                        type="radio"
+                        value="option1"
+                      />
+                      <span class="form-check-sign"> </span> Yes
+                    </label>&nbsp;&nbsp;
+                    <label class="form-check-label">
+                      <input
+                        class="form-check-input"
+                        id="exampleRadios1"
+                        name="codexeOfc"
+                        type="radio"
+                        value="option1"
+                      />
+                      <span class="form-check-sign"> </span> No
+                    </label>
+                  </div><br>
+                  <div class="input-group">
+                    Which team do you belong to?
+                    </div>
+                    <div class="form-check form-check-radio">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          id="exampleRadios2"
+                          name="PrimPurpose"
+                          type="radio"
+                          value="option1"
+                        />
+                        <span class="form-check-sign"> </span> N/A
+                      </label>&nbsp;&nbsp;
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          id="exampleRadios2"
+                          name="PrimPurpose"
+                          type="radio"
+                          value="option1"
+                        />
+                        <span class="form-check-sign"> </span> Technical
+                      </label>&nbsp;&nbsp;
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          id="exampleRadios2"
+                          name="PrimPurpose"
+                          type="radio"
+                          value="option1"
+                        />
+                        <span class="form-check-sign"> </span> Web Design
+                      </label>&nbsp;&nbsp;
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          id="exampleRadios2"
+                          name="PrimPurpose"
+                          type="radio"
+                          value="option1"
+                        />
+                        <span class="form-check-sign"> </span> SOC & Ops
+                      </label>&nbsp;&nbsp;
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          id="exampleRadios2"
+                          name="PrimPurpose"
+                          type="radio"
+                          value="option1"
+                        />
+                        <span class="form-check-sign"> </span> Marketing
+                      </label>&nbsp;&nbsp;
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          id="exampleRadios2"
+                          name="PrimPurpose"
+                          type="radio"
+                          value="option1"
+                        />
+                        <span class="form-check-sign"> </span> Finance
+                      </label>
+                    </div>
                 </form>
               </div>
-              <div class="card-footer">
-                <a
-                  class="btn btn-danger btn-round btn-lg"
-                  href="javascript:void(0)"
-                >
-                  Get Started
+              <div class="text-center">
+                <a href="" class="btn btn-primary btn-round btn-lg" role="button">
+                Sign-up
                 </a>
-              </div>
+                </div><br>
             </div>
           </div>
         </div>
@@ -205,40 +352,40 @@
       </div>
     </div>
   </div>
-  <footer class="footer">
+  <footer class="footer" style="margin-top: 50px;">
     <div class="container">
       <div class="row">
-        <div class="col-md-3"><h1 class="title">BLK•</h1></div>
+        <div class="col-md-3"><h1 class="title">Code•exe</h1></div>
         <div class="col-md-3">
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/home']"> Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/landing']"> Landing </a>
+              <a class="nav-link" > Events </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/register']"> Register </a>
+              <a class="nav-link" > Contact Us </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/profile']"> Profile </a>
+              <a class="nav-link" > Member Sign-up </a>
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="https://creative-tim.com/contact-us?ref=blkdsa-footer">
+              <a class="nav-link" href=#>
                 Contact Us
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://creative-tim.com/about-us?ref=blkdsa-footer">
+              <a class="nav-link" href=#>
                 About Us
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://creative-tim.com/blog?ref=blkdsa-footer">
+              <a class="nav-link" href=#>
                 Blog
               </a>
             </li>
@@ -254,24 +401,24 @@
           <div class="btn-wrapper profile">
             <a
               class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-              href="https://twitter.com/creativetim"
+              href=""
               target="_blank"
             >
-              <i class="fab fa-twitter"> </i>
+              <i class="fab fa-linkedin"> </i>
             </a>
             <a
               class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-              href="https://www.facebook.com/creativetim"
+              href=""
               target="_blank"
             >
               <i class="fab fa-facebook-square"> </i>
             </a>
             <a
               class="btn btn-icon btn-neutral btn-round btn-simple"
-              href="https://dribbble.com/creativetim"
+              href=""
               target="_blank"
             >
-              <i class="fab fa-dribbble"> </i>
+              <i class="fab fa-instagram"> </i>
             </a>
           </div>
         </div>
