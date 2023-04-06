@@ -4,6 +4,9 @@
 /tmp
 /out-tsc
 /bazel-out
+/docs
+/documentation
+/e2e
 
 # Node
 /node_modules
@@ -35,7 +38,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-/.gitignore
+.gitignore
 
 # System files
 .DS_Store
