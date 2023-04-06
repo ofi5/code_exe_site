@@ -5,6 +5,9 @@ import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { ProgressbarModule } from "ngx-bootstrap/progressbar";
@@ -20,12 +23,12 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { PagesModule } from "./pages/pages.module";
 
 import { IndexComponent } from "./pages/index/index.component";
-import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+import { ProfilepageComponent } from "./pages/site/profilepage/profilepage.component";
+import { RegisterpageComponent } from "./pages/site/registerpage/registerpage.component";
+import { LandingpageComponent } from "./pages/site/landingpage/landingpage.component";
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,
@@ -37,6 +40,8 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     // BsDropdownModule.forRoot(),
     // ProgressbarModule.forRoot(),
     // TooltipModule.forRoot(),
