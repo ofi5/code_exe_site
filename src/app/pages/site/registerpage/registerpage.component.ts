@@ -122,7 +122,7 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
 
   onSubmit(formData: Signup) {
 
-    if(formData.fullName =="" || formData.UTDEmail == "" || formData.txnId == ""){
+    if(formData.fullName =="" || formData.UTDEmail == "" || formData.txnId == "" || formData.txnId == null){
       this.submitted = false;
       return;
     }
