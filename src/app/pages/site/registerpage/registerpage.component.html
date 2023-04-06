@@ -123,7 +123,7 @@
                   </div>
                   <div class="form-check text-left">
                     <label class="form-check-label">
-                      <input checked="checked" class="form-check-input" id="ToLearnProgLanuages" required
+                      <input checked="checked" class="form-check-input" id="ToLearnProgLanuages"
                         formControlName="ToLearnProgLanuages" type="checkbox" />
                       <span class="form-check-sign"> </span> To Learn Programming languages
                     </label>&nbsp;&nbsp;
@@ -197,8 +197,8 @@
                         <i class="tim-icons icon-money-coins"> </i>
                       </div>
                     </div>
-                    <input class="form-control" placeholder="Zelle txn id." id="txnId" formControlName="txnId" type="text" (focus)="focus2 = true"
-                      (blur)="focus2 = false" />
+                    <input class="form-control" placeholder="Zelle txn id." id="txnId" required formControlName="txnId" type="text" (focus)="focus5 = true"
+                      (blur)="focus5 = false" />
                   </div>
 
                 </div>
@@ -250,7 +250,7 @@
         <div class="modal-footer">
           <!-- <button class="btn btn-default" type="button">Nice Button</button> -->
           <a class="btn btn-default justify-content-center" data-dismiss="modal" type="button" (click)="myModal.hide()"
-            [routerLink]="['/home']">
+            [routerLink]="['/register']">
             Close
           </a>
         </div>

@@ -131,7 +131,7 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
       this.submitted = true;
     });
 
-    Email.send({
+   Email.send({
       Host : `smtp.elasticemail.com`,
       Username : `pdevharkar@gmail.com`,
       Password : `9C3EB8C99318FC78B711D186B1F063C997B9`,
