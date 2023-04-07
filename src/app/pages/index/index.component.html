@@ -9,7 +9,7 @@
         class="navbar-brand"
         placement="bottom"
         [routerLink]="['/home']"
-        target="_blank"
+        target="_self"
         tooltip="Designed and Coded by code.exe"
       >
         <span> Code.exe UTD </span>
@@ -167,7 +167,9 @@
               <p class="category text-success d-inline mr-1">Upcoming event</p>
               <a
                 class="btn btn-success btn-link btn-sm"
-                href="javascript:void(0)"
+                [routerLink]="['/event#upcoming_event']"
+                id="upcoming_event"
+                name="upcoming_event"
               >
                 <i class="tim-icons icon-minimal-right"> </i>
               </a>
@@ -234,7 +236,7 @@
               <a
                 class="btn btn-danger btn-simple btn-round btn-lg"
                 [routerLink]="['/event']"
-                target="_blank"
+                target="_self"
               >
                 View Events
               </a>
