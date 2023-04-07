@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
@@ -18,6 +18,7 @@ import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
 
 import { IndexComponent } from "./index/index.component";
+
 import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
@@ -29,6 +30,7 @@ import { EventpageComponent } from "./examples/eventpage/eventpage.component";
     BrowserModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     ProgressbarModule.forRoot(),
     TooltipModule.forRoot(),
@@ -47,7 +49,8 @@ import { EventpageComponent } from "./examples/eventpage/eventpage.component";
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    EventpageComponent
+    EventpageComponent,
+    FooterComponent
   ],
   exports: [
     IndexComponent,

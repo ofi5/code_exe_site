@@ -37,7 +37,9 @@
               "src/assets/scss/blk-design-system.scss",
               "src/assets/demo/demo.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/smtp.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,7 +95,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/smtp.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
