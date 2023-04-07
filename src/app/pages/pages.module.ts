@@ -22,6 +22,7 @@ import { ProfilepageComponent } from "./site/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./site/registerpage/registerpage.component";
 import { LandingpageComponent } from "./site/landingpage/landingpage.component";
 import { FooterComponent } from './footer/footer.component';
+import { EventpageComponent } from './site/eventpage/eventpage.component';
 
 @NgModule({
   imports: [
@@ -48,13 +49,15 @@ import { FooterComponent } from './footer/footer.component';
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    FooterComponent
+    FooterComponent,
+    EventpageComponent
   ],
   exports: [
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    EventpageComponent
   ],
   providers: []
 })

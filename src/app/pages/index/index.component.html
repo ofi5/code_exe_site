@@ -104,7 +104,7 @@
             >
               <i class="tim-icons icon-paper"> </i> Documentation
             </a>-->
-            <a class="dropdown-item">
+            <a class="dropdown-item" [routerLink]="['/event']">
               <i class="tim-icons icon-image-02"> </i> Events
             </a>
             <a class="dropdown-item" [routerLink]="['/register']" 
@@ -233,7 +233,7 @@
               </a>
               <a
                 class="btn btn-danger btn-simple btn-round btn-lg"
-                href=""
+                [routerLink]="['/event']"
                 target="_blank"
               >
                 View Events
@@ -256,7 +256,7 @@
             </p>
             <a
               class="btn btn-warning mt-4"
-              href=""
+              [routerLink]="['/event']"
             >
               See all events
             </a>

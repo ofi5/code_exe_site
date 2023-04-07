@@ -100,7 +100,7 @@
     }
   }
 }
-.landing-page {
+.event-page {
   overflow-x: hidden;
 
   .page-header {
@@ -552,6 +552,7 @@
 
 .index-page,
 .landing-page,
+.event-page,
 .profile-page,
 .register-page {
   background-image: url("/assets/img/dots.png");
@@ -602,6 +603,13 @@
   }
 
   .landing-page {
+    .page-header {
+      h1 {
+        margin-top: 100px;
+      }
+    }
+  }
+  .event-page {
     .page-header {
       h1 {
         margin-top: 100px;
