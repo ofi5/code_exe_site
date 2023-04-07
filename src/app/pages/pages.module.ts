@@ -18,11 +18,10 @@ import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
 
 import { IndexComponent } from "./index/index.component";
-
-import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
-import { EventpageComponent } from "./examples/eventpage/eventpage.component";
+import { ProfilepageComponent } from "./site/profilepage/profilepage.component";
+import { RegisterpageComponent } from "./site/registerpage/registerpage.component";
+import { LandingpageComponent } from "./site/landingpage/landingpage.component";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
@@ -49,15 +48,13 @@ import { EventpageComponent } from "./examples/eventpage/eventpage.component";
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    EventpageComponent,
     FooterComponent
   ],
   exports: [
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-    LandingpageComponent,
-    EventpageComponent
+    LandingpageComponent
   ],
   providers: []
 })

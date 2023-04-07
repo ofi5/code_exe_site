@@ -23,19 +23,16 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { PagesModule } from "./pages/pages.module";
 
 import { IndexComponent } from "./pages/index/index.component";
-import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
-import { EventpageComponent } from "./pages/examples/eventpage/eventpage.component";
-
+import { ProfilepageComponent } from "./pages/site/profilepage/profilepage.component";
+import { RegisterpageComponent } from "./pages/site/registerpage/registerpage.component";
+import { LandingpageComponent } from "./pages/site/landingpage/landingpage.component";
 @NgModule({
   declarations: [
     AppComponent,
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,
-    // LandingpageComponent,
-    // EventpageComponent
+    // LandingpageComponent
   ],
   imports: [
     BrowserAnimationsModule,
