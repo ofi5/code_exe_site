@@ -111,7 +111,7 @@
             >
               <i class="tim-icons icon-single-02"> </i> Member Sign-up
             </a> 
-            <a class="dropdown-item">
+            <a class="dropdown-item" [routerLink]="['/contactus']">
               <i class="tim-icons icon-bullet-list-67"> </i> Contact Us
             </a>
           </div>
@@ -167,7 +167,8 @@
               <p class="category text-success d-inline mr-1">Upcoming event</p>
               <a
                 class="btn btn-success btn-link btn-sm"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdDJuVbFAtocmi7xD-9eHTpeiPz7wP3RtJLqA8g0VkfP-osGg/viewform?vc=0&c=0&w=1&flr=0"
+                [routerLink]="['/event']"
+                fragment="upcoming_event"
                 target="_blank"
                 id="upcoming_event"
                 name="upcoming_event"
@@ -186,7 +187,8 @@
                 </a>
                 <button
                   class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
-                  href="javascript:void(0)"
+                  href="https://www.instagram.com/code.exe_utd/"
+                  target="_blank"
                 >
                   <i class="fab fa-instagram"> </i>
                 </button>
@@ -211,7 +213,7 @@
     </div>
   </div>
   <div class="main">
-    <div class="section section-nucleo-icons">
+    <div class="section section-nucleo-icons" id="about_us" name="about_us">
       <img class="path" src="assets/img/path3.png" />
 
       <div class="container">

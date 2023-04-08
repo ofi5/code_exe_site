@@ -23,6 +23,7 @@ import { RegisterpageComponent } from "./site/registerpage/registerpage.componen
 import { LandingpageComponent } from "./site/landingpage/landingpage.component";
 import { FooterComponent } from './footer/footer.component';
 import { EventpageComponent } from './site/eventpage/eventpage.component';
+import { ContactusComponent } from './site/contactus/contactus.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { EventpageComponent } from './site/eventpage/eventpage.component';
     RegisterpageComponent,
     LandingpageComponent,
     FooterComponent,
-    EventpageComponent
+    EventpageComponent,
+    ContactusComponent
   ],
   exports: [
     IndexComponent,

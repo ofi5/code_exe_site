@@ -1,0 +1,191 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100" id="navbar-top">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" tooltip="Designed and Coded by Code.exe">
+          <span> Code•exe </span> UTD
+        </a>
+        <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler"
+          [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
+          <span class="navbar-toggler-bar bar1"> </span>
+          <span class="navbar-toggler-bar bar2"> </span>
+          <span class="navbar-toggler-bar bar3"> </span>
+        </button>
+      </div>
+      <div class="navbar-collapse justify-content-end" [collapse]="isCollapsed" id="navigation">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand"><a> Code•exe </a></div>
+            <div class="col-6 collapse-close text-right">
+              <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler"
+                [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
+                <i class="tim-icons icon-simple-remove"> </i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item p-0">
+            <a class="nav-link" href="https://www.linkedin.com/company/code-exe/mycompany/" placement="bottom" target="_blank" tooltip="Follow us on LinkedIn">
+              <i class="fab fa-linkedin"> </i>
+              <p class="d-lg-none d-xl-none">LinkedIn</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" href="" placement="bottom" target="_blank" tooltip="Like us on Facebook">
+              <i class="fab fa-facebook-square"> </i>
+              <p class="d-lg-none d-xl-none">Facebook</p>
+            </a>
+          </li>
+          <li class="nav-item p-0">
+            <a class="nav-link" href="https://www.instagram.com/code.exe_utd/" placement="bottom" target="_blank" tooltip="Follow us on Instagram">
+              <i class="fab fa-instagram"> </i>
+              <p class="d-lg-none d-xl-none">Instagram</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']"> Back to Home </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<div class="wrapper">
+   
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-plain">
+            <div class="card-header">
+              <h1 class="profile-title text-left">Contact</h1>
+              <h5 class="text-on-back">C</h5>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="contactFormData" *ngIf="contactFormData" (ngSubmit)="onSubmit(contactFormData.value)">
+                <div class="row">
+                    <div  *ngIf="submitted">
+                        <alert
+                            class="alert-with-icon"
+                        [type]="'success alert-with-icon'"
+                        [dismissible]="true"
+                        >
+                        <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+                        <span>
+                            <b> Well done! - </b> Your query is coming our way..
+                        </span>
+                        </alert>
+                    </div>
+                    <!-- <div  *ngIf="!submitted">
+                        <alert
+                        class="alert-with-icon"
+                        [type]="'warning alert-with-icon'"
+                        [dismissible]="true"
+                        >
+                        <span class="tim-icons icon-bulb-63" data-notify="icon"> </span>
+                        <span>
+                          <b> Error! - </b> Something went wrong
+                        </span>
+                      </alert>
+                    </div> -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Your Name </label>
+                      <input class="form-control" placeholder="Your Name" formControlName="uName" type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Email address </label>
+                      <input
+                        class="form-control"
+                        placeholder="mike@email.com"
+                        formControlName="email"
+                        type="email"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Phone </label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Contact number"
+                        formControlName="phoneNumber"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Major </label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Major"
+                        formControlName="major"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label> Message </label>
+                      <input
+                        class="form-control"
+                        placeholder="Hello there!"
+                        type="text"
+                        formControlName="message"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-danger btn-round float-right"
+                  placement="right"
+                  type="submit"
+                >
+                  Send text
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ml-auto">
+          <div class="info info-horizontal">
+            <div class="icon icon-danger">
+              <i class="tim-icons icon-square-pin"> </i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">Find us at the office</h4>
+              <p>
+               JSOM, The University of Texas at Dallas <br />
+
+               800 W Campbell Rd, Richardson, TX 75080 <br />
+
+              </p>
+            </div>
+          </div>
+          <div class="info info-horizontal">
+            <div class="icon icon-danger">
+              <i class="tim-icons icon-mobile"> </i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">Give us a ring</h4>
+              <p>
+                Admin <br />
+
+                +1 469 xxx xxxx <br />
+
+                Mon - Fri, 8:00-22:00
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+</div>

@@ -8,6 +8,7 @@ import { ProfilepageComponent } from "./pages/site/profilepage/profilepage.compo
 import { RegisterpageComponent } from "./pages/site/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/site/landingpage/landingpage.component";
 import { EventpageComponent } from './pages/site/eventpage/eventpage.component';
+import { ContactusComponent } from "./pages/site/contactus/contactus.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },
-  { path: "event", component: EventpageComponent }
+  { path: "event", component: EventpageComponent },
+  { path: "contactus", component: ContactusComponent }
 ];
 
 @NgModule({
@@ -23,7 +25,10 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: true
+      useHash: true,
+      onSameUrlNavigation: 'reload',
+      anchorScrolling: 'enabled',
+      enableTracing: false
     })
   ],
   exports: []
