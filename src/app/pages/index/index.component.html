@@ -163,15 +163,26 @@
               Coding Made Easy! <br/>
               UTD JSOM's only coding or programming organization for students.
             </p>
-            <div class="btn-wrapper mb-3">
+            <div class="btn-wrapper" style="cursor: pointer" [routerLink]="['/event']">
               <p class="category text-success d-inline mr-1">Upcoming event</p>
               <a
                 class="btn btn-success btn-link btn-sm"
-                [routerLink]="['/event']"
                 fragment="upcoming_event"
                 target="_blank"
                 id="upcoming_event"
                 name="upcoming_event"
+              >
+                <i class="tim-icons icon-minimal-right"> </i>
+              </a>
+            </div>
+            <div class="btn-wrapper mb-3" style="cursor: pointer" [routerLink]="['/register']">
+              <p class="category text-success d-inline mr-1">Member Sign-up</p>
+              <a
+                class="btn btn-success btn-link btn-sm"
+                fragment="upcoming_event"
+                target="_blank"
+                id="member_signup"
+                name="member_signup"
               >
                 <i class="tim-icons icon-minimal-right"> </i>
               </a>
@@ -185,19 +196,13 @@
                 >
                   <i class="fab fa-linkedin"> </i>
                 </a>
-                <button
+                <a
                   class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
                   href="https://www.instagram.com/code.exe_utd/"
                   target="_blank"
                 >
                   <i class="fab fa-instagram"> </i>
-                </button>
-                <button
-                  class="btn btn-icon btn-simple btn-round btn-neutral"
-                  href="javascript:void(0)"
-                >
-                  <i class="fab fa-facebook"> </i>
-                </button>
+              </a>
               </div>
             </div>
           </div>
@@ -228,22 +233,6 @@
               mentoring sessions, and hackathons to help students win at coding. As we are based in JSOM, currently, we are exploring R and Python for analytics, 
               and you will see exciting content and events related to the same.
             </h4>
-            <div class="btn-wrapper">
-              <a
-                class="btn btn-danger btn-round mr-1"
-                target="_self"
-                [routerLink]="['/register']"
-              >
-                Member Sign-up
-              </a>
-              <a
-                class="btn btn-danger btn-simple btn-round btn-lg"
-                [routerLink]="['/event']"
-                target="_self"
-              >
-                View Events
-              </a>
-            </div>
           </div>
         </div>
       </div>
