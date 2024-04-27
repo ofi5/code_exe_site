@@ -1,4 +1,4 @@
-# codexe
+# Code.exe
 
 ## Please follow following steps to checkout :
 
