@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Contactus } from 'src/app/models/contactus.model.js';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
-import '../../../../assets/js/smtp.js';
 import { Router } from '@angular/router';
-declare let Email: any;
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com'; // Import EmailJS
 
 @Component({
   selector: 'app-contactus',
@@ -15,58 +14,42 @@ export class ContactusComponent implements OnInit {
   isCollapsed = true;
   submitted = false;
   contactus: Contactus = new Contactus();
-
   contactFormData: FormGroup;
 
-  constructor(private builder: FormBuilder,private router: Router) {}
+  constructor(private builder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-
     this.contactFormData = this.builder.group({
       uName: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-      major: new FormControl('',Validators.required),
-      phoneNumber: new FormControl('',[Validators.requiredTrue]),
+      major: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', [Validators.required]),
       message: new FormControl()
-      }) 
+    });
 
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("profile-page");
   }
 
   onSubmit(contactFormData: Contactus) {
+    const emailParams = {
+      user_name: contactFormData.uName,
+      user_email: contactFormData.email,
+      user_phone: contactFormData.phoneNumber,
+      user_major: contactFormData.major,
+      message: contactFormData.message,
+    };
 
-    Email.send({
-      Host : `smtp.elasticemail.com`,
-      Username : `pdevharkar@gmail.com`,
-      Password : `9C3EB8C99318FC78B711D186B1F063C997B9`,
-      To : contactFormData.email,
-      From : `pdevharkar@gmail.com`,
-      Subject : 'Code.exe - Query received',
-      Body : `
-      <p>Dear ${contactFormData.uName}</p> <br/> Thank you for your message! We have received your query. <br><br> Regards, <br><b> Team Code.exe</b>`
-      }).then( (message: any) => {console.log(message)});
-
-      Email.send({
-      Host : `smtp.elasticemail.com`,
-      Username : `pdevharkar@gmail.com`,
-      Password : `9C3EB8C99318FC78B711D186B1F063C997B9`,
-      To : `pratik_dev91@hotmail.com`,
-      From : `pdevharkar@gmail.com`,
-      Subject : 'Code.exe - Query from user',
-      Body : `
-      <p>Query received from user :</p> <br/> 
-      <b> Name:</b> ${contactFormData.uName} <br/>
-      <b> UTD Email: </b> ${contactFormData.email} <br/>
-      <b> Contact No: </b> ${contactFormData.phoneNumber} <br/>
-      <b> Major: </b> ${contactFormData.major} <br/>
-      <b> Message:</b> ${contactFormData.message}`
-      }).then( (message: any) => {console.log(message)}) ;
-
-      this.submitted = true;
-      this.contactFormData.reset();
-      this.router.navigate(['contactus']);
-      
+    // Replace 'YOUR_PUBLIC_KEY' with the public key from the EmailJS dashboard
+    emailjs.send('service_kg6ypmk', 'template_k1rf4cl', emailParams, 'y0P41lIpdxLOBTYzz')
+      .then((response: EmailJSResponseStatus) => {
+        console.log('Email successfully sent!', response.status, response.text);
+        this.submitted = true;
+        this.contactFormData.reset();
+        this.router.navigate(['contactus']);
+      }, (error) => {
+        console.error('Failed to send email.', error);
+      });
   }
 
   ngOnDestroy() {
