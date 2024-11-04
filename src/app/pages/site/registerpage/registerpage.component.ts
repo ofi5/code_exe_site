@@ -1,169 +1,159 @@
-import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
+import { Component, OnInit, OnDestroy, AfterViewInit, HostListener } from "@angular/core";
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
-import { Signup } from 'src/app/models/signup.model';
-import { SignupService } from 'src/app/services/signup.service';
-import '../../../../assets/js/smtp.js';
-declare let Email: any;
-
+import emailjs from 'emailjs-com';
+import noUiSlider from 'nouislider';
 
 @Component({
   selector: "app-registerpage",
   templateUrl: "registerpage.component.html"
 })
-
-export class RegisterpageComponent implements OnInit, OnDestroy {
+export class RegisterpageComponent implements OnInit, OnDestroy, AfterViewInit {
   isCollapsed = true;
-  focus: any;
-  focus1: any;
-  focus2: any;
-  focus3: any;
-  focus4: any;
-  focus5: any;
   submitted = false;
-  signup: Signup = new Signup();
-  
   formData: FormGroup;
 
-  constructor(private builder: FormBuilder,private signupService: SignupService) { }
-
-  newMember(): void {
-    this.submitted = false;
-    this.signup = new Signup();
+  constructor(private builder: FormBuilder) {
+    emailjs.init('y0P41lIpdxLOBTYzz');  // Initialize EmailJS with User ID
   }
 
   @HostListener("document:mousemove", ["$event"])
-  onMouseMove(e) {
-    var squares1 = document.getElementById("square1");
-    var squares2 = document.getElementById("square2");
-    var squares3 = document.getElementById("square3");
-    var squares4 = document.getElementById("square4");
-    var squares5 = document.getElementById("square5");
-    var squares6 = document.getElementById("square6");
-    var squares7 = document.getElementById("square7");
-    var squares8 = document.getElementById("square8");
+  onMouseMove(e: MouseEvent) {
+    const squares = Array.from(document.querySelectorAll('[id^="square"]'));
+    const posX = e.clientX - window.innerWidth / 2;
+    const posY = e.clientY - window.innerWidth / 6;
 
-    var posX = e.clientX - window.innerWidth / 2;
-    var posY = e.clientY - window.innerWidth / 6;
-
-    squares1.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares2.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares3.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares4.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares5.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares6.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.05 +
-      "deg) rotateX(" +
-      posY * -0.05 +
-      "deg)";
-    squares7.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.02 +
-      "deg) rotateX(" +
-      posY * -0.02 +
-      "deg)";
-    squares8.style.transform =
-      "perspective(500px) rotateY(" +
-      posX * 0.02 +
-      "deg) rotateX(" +
-      posY * -0.02 +
-      "deg)";
+    squares.forEach((square: HTMLElement, index: number) => {
+      const rotationFactor = index < 6 ? 0.05 : 0.02;
+      square.style.transform = `perspective(500px) rotateY(${posX * rotationFactor}deg) rotateX(${posY * -rotationFactor}deg)`;
+    });
   }
 
   ngOnInit() {
+    // Initialize form with validation rules
+    this.formData = this.builder.group({
+      fullName: new FormControl('', [Validators.required]),
+      UTDEmail: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
+      joinDate: new FormControl('', [Validators.required]),
+      major: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
+      ToLearnProgLanuages: new FormControl(),
+      Hackathons: new FormControl(),
+      Networking: new FormControl(),
+      ToBecomeAnOfficer: new FormControl(),
+      AreYouAnOfficer: new FormControl(),
+      Team: new FormControl(),
+      txnId: new FormControl('', Validators.required)
+    });
 
-   this.formData = this.builder.group({
-    fullName: new FormControl('', [Validators.required]),
-    UTDEmail: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-    joinDate: new FormControl('', [Validators.required]),
-    major: new FormControl('',Validators.required),
-    phoneNumber: new FormControl('',[Validators.requiredTrue]),
-    ToLearnProgLanuages: new FormControl(),
-    Hackathons: new FormControl(),
-    Networking: new FormControl(),
-    ToBecomeAnOfficer: new FormControl(),
-    AreYouAnOfficer: new FormControl(),
-    Team: new FormControl(),
-    txnId: new FormControl()
-    }) 
-
-  
-    var body = document.getElementsByTagName("body")[0];
+    // Add a class to the body for styling purposes
+    const body = document.getElementsByTagName("body")[0];
     body.classList.add("register-page");
-
-    this.onMouseMove(event);
-     
   }
 
-  onSubmit(formData: Signup) {
+  ngAfterViewInit() {
+    // Initialize noUiSlider once the view has been initialized
+    const slider = document.getElementById('slider');
+    if (slider) {
+      noUiSlider.create(slider, {
+        start: [20, 80],
+        connect: true,
+        range: {
+          'min': 0,
+          'max': 100
+        }
+      });
+    } else {
+      console.error('Slider element not found');
+    }
+  }
 
-    if(formData.fullName =="" || formData.UTDEmail == "" || formData.txnId == "" || formData.txnId == null){
+  onSubmit(formData: any) {
+    console.log('Submit button clicked');
+
+    if (this.formData.invalid) {
+      console.log('Form validation failed');
       this.submitted = false;
       return;
     }
-    this.signupService.create(formData).then(() => {
-      console.log('Created new item successfully!');
-      this.submitted = true;
-    });
 
-   Email.send({
-      Host : `smtp.elasticemail.com`,
-      Username : `pdevharkar@gmail.com`,
-      Password : `9C3EB8C99318FC78B711D186B1F063C997B9`,
-      To : formData.UTDEmail,
-      From : `pdevharkar@gmail.com`,
-      Subject : 'Code.exe Test Email',
-      Body : `
-      <p>Dear ${formData.fullName}</p> <br/> Thank you for signing up! We have received your details. <br><br> Regards, <br><b> Team Code.exe</b>`
-      }).then( (message: any) => {console.log(message)});
+    this.submitted = true;
 
-      Email.send({
-      Host : `smtp.elasticemail.com`,
-      Username : `pdevharkar@gmail.com`,
-      Password : `9C3EB8C99318FC78B711D186B1F063C997B9`,
-      To : `pratik_dev91@hotmail.com`,
-      From : `pdevharkar@gmail.com`,
-      Subject : 'Code.exe - Member registration',
-      Body : `
-      <p>New member registration details :</p> <br/> 
-      <b> Name:</b> ${formData.fullName} <br/>
-      <b> UTD Email: </b> ${formData.UTDEmail} <br/>
-      <b> Contact No: </b> ${formData.phoneNumber} <br/>
-      <b> Join Date: </b> ${formData.joinDate} <br/>
-      <b> Major: </b> ${formData.major} <br/>
-      <b> Officer: </b> ${formData.AreYouAnOfficer} <br/>
-      <b> Team: </b> ${formData.Team} <br/>
-      <b> Txn Id:</b> ${formData.txnId}`
-      }).then( (message: any) => {console.log(message)}) ; 
+    const userEmailParams: any = {
+      user_name: formData.fullName,
+      user_email: formData.UTDEmail,
+      message: "Thank you for signing up! We have received your details and will be in touch soon."
+    };
+  
+    // Conditionally add fields based on user input
+    if (formData.joinDate) {
+      userEmailParams.user_joinDate = formData.joinDate;
+    }
+    if (formData.major) {
+      userEmailParams.user_major = formData.major;
+    }
+    if (formData.phoneNumber) {
+      userEmailParams.user_phone = formData.phoneNumber;
+    }
+    if (formData.ToLearnProgLanuages) {
+      userEmailParams.user_learnProgramming = formData.ToLearnProgLanuages;
+    }
+    if (formData.Hackathons) {
+      userEmailParams.user_hackathons = formData.Hackathons;
+    }
+    if (formData.Networking) {
+      userEmailParams.user_networking = formData.Networking;
+    }
+    if (formData.ToBecomeAnOfficer) {
+      userEmailParams.user_becomeOfficer = formData.ToBecomeAnOfficer;
+    }
+    if (formData.AreYouAnOfficer) {
+      userEmailParams.user_isOfficer = formData.AreYouAnOfficer;
+    }
+    if (formData.Team) {
+      userEmailParams.user_team = formData.Team;
+    }
+    if (formData.txnId) {
+      userEmailParams.user_transactionId = formData.txnId;
+    }
+    // Send confirmation email to the user
+    emailjs.send('service_kg6ypmk', 'template_iq1i60s', userEmailParams, 'y0P41lIpdxLOBTYzz')
+      .then((response) => {
+        console.log('User confirmation email sent!', response.status, response.text);
+      })
+      .catch((error) => {
+        console.error('Error sending user confirmation email:', error);
+      });
+
+    // Prepare email parameters for admin notification email
+    const adminEmailParams = {
+      user_name: formData.fullName,
+      user_email: formData.UTDEmail,
+      user_joinDate: formData.joinDate,
+      user_major: formData.major,
+      user_phone: formData.phoneNumber,
+      user_learnProgramming: formData.ToLearnProgLanuages,
+      user_hackathons: formData.Hackathons,
+      user_networking: formData.Networking,
+      user_becomeOfficer: formData.ToBecomeAnOfficer,
+      user_isOfficer: formData.AreYouAnOfficer,
+      user_team: formData.Team,
+      user_transactionId: formData.txnId,
+      message: "New Registration",
+      user_request: "Membership Request"
+    };
+
+    // Send admin notification email
+    emailjs.send('service_kg6ypmk', 'template_k1rf4cl', adminEmailParams, 'y0P41lIpdxLOBTYzz')
+      .then((response) => {
+        console.log('Admin notification email sent!', response.status, response.text);
+      })
+      .catch((error) => {
+        console.error('Error sending admin notification email:', error);
+      });
   }
 
   ngOnDestroy() {
-    var body = document.getElementsByTagName("body")[0];
+    const body = document.getElementsByTagName("body")[0];
     body.classList.remove("register-page");
   }
 }
