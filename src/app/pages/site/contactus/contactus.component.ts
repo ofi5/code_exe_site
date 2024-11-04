@@ -38,6 +38,16 @@ export class ContactusComponent implements OnInit {
       user_phone: contactFormData.phoneNumber,
       user_major: contactFormData.major,
       message: contactFormData.message,
+
+      user_request: "Query",
+      user_joinDate: "null",
+      user_learnProgramming: "null",
+      user_hackathons: "null",
+      user_networking: "null",
+      user_becomeOfficer: "null",
+      user_isOfficer: "null",
+      user_team: "null",
+      user_transactionId: "null"
     };
 
     // Replace 'YOUR_PUBLIC_KEY' with the public key from the EmailJS dashboard
