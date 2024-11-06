@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: deploy_dist
-          path: dist  # Confirm this path matches your actual build output
+          path: docs  # Updated to match the outputPath in angular.json
 
   deploy:
     runs-on: ubuntu-latest
@@ -42,4 +42,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist/angular-demo  # Update if necessary
+          FOLDER: docs  # Updated to match the outputPath in angular.json
