@@ -11,13 +11,14 @@ import { EventpageComponent } from './pages/site/eventpage/eventpage.component';
 import { ContactusComponent } from "./pages/site/contactus/contactus.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "", redirectTo: "profile", pathMatch: "full" },  // Redirect root to profile
   { path: "home", component: IndexComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },
   { path: "event", component: EventpageComponent },
-  { path: "contactus", component: ContactusComponent }
+  { path: "contactus", component: ContactusComponent },
+  { path: "**", redirectTo: "profile" }  // Wildcard route to handle unknown paths
 ];
 
 @NgModule({
@@ -25,7 +26,7 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: true,
+      useHash: true,               // Ensures client-side routing works on GitHub Pages
       onSameUrlNavigation: 'reload',
       anchorScrolling: 'enabled',
       enableTracing: false
