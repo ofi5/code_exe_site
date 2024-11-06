@@ -8,7 +8,7 @@ npm install -g @angular/cli
 3. Install Visual Studio Code
 4. Clone this [repository](https://github.com/codexe-utd/site.git)
 5. sudo npm install -g n  
-6. sudo n 14.20  
+6. sudo n 14.20  (for mac, check for windows)
 
 
 
