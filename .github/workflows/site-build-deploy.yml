@@ -40,6 +40,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: docs  # Updated to match the outputPath in angular.json
+          token: ${{ secrets.GITHUB_TOKEN }}  # Corrected input for token
+          branch: gh-pages
+          folder: docs  # Updated to match the outputPath in angular.json
