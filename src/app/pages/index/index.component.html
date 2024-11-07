@@ -131,13 +131,13 @@
 </nav>
 <div class="wrapper">
   <div class="page-header header-filter">
-    <div class="squares square1"></div>
-    <div class="squares square2"></div>
-    <div class="squares square3"></div>
-    <div class="squares square4"></div>
-    <div class="squares square5"></div>
-    <div class="squares square6"></div>
-    <div class="squares square7"></div>
+    <div class="squares square1" style="opacity: 0.1;"></div>
+    <div class="squares square2" style="opacity: 0.1;" ></div>
+    <div class="squares square3" style="opacity: 0.1;"></div>
+    <div class="squares square4" style="opacity: 0.1;"></div>
+    <div class="squares square5" style="opacity: 0.1;"></div>
+    <div class="squares square6" style="opacity: 0.1;"></div>
+    <div class="squares square7" style="opacity: 0.1;"></div>
     <div class="container">
      <!--  <div class="content-center brand">
         <img
@@ -155,16 +155,24 @@
         <div
           class="row row-grid justify-content-between align-items-center text-left"
         >
+        <div class="col-lg-5 col-md-5">
+          <img
+            alt="Circle image"
+            
+            src="assets/img/Logo_CE.png"
+            style="width: 300px; height: 300px;"
+          />
+        </div>
           <div class="col-lg-6 col-md-6">
-            <h1 class="text-white">
+            <h1 style="color:rgb(255, 136, 0); font-size: 50px;">
               Code•exe <br />
             </h1>
-            <p class="text-white mb-3">
+            <p class="" style="font-size: 20px; margin-bottom: 40px;">
               Coding Made Easy! <br/>
               UTD JSOM's only coding or programming organization for students.
             </p>
             <div class="btn-wrapper" style="cursor: pointer" [routerLink]="['/event']">
-              <p class="category text-success d-inline mr-1">Upcoming event</p>
+              <p class=" d-inline mr-1" style="color: rgb(226, 156, 6); font-size: 18px; margin-top: 20px;">Upcoming event</p>
               <a
                 class="btn btn-success btn-link btn-sm"
                 fragment="upcoming_event"
@@ -176,7 +184,7 @@
               </a>
             </div>
             <div class="btn-wrapper mb-3" style="cursor: pointer" [routerLink]="['/register']">
-              <p class="category text-success d-inline mr-1">Member Sign-up</p>
+              <p class="d-inline mr-1" style="color: rgb(226, 156, 6); font-size: 18px;">Member Sign-up</p>
               <a
                 class="btn btn-success btn-link btn-sm"
                 fragment="upcoming_event"
@@ -206,13 +214,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-5 col-md-5">
-            <img
-              alt="Circle image"
-              
-              src="assets/img/Logo_CE.png"
-            />
-          </div>
+          
         </div>
       </div>
     </div>
@@ -241,27 +243,33 @@
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-5 mb-5 mb-lg-0">
-            <h1 class="text-white font-weight-light">Events</h1>
+            <h1 class="text-white font-weight-light" style="align-items: center; text-align: center;">Events</h1>
             <p class="text-white mt-4">
               We conduct a variety of events such as boot camps, expert speaker sessions, mentoring sessions, 
               and hackathons to help our students be the best they can be. <br>Currently, we are exploring R and Python programming 
               for analytics, but our passion doesn't end here.
               We are always open to new ideas and technologies that can help our students excel in the world of programming.
             </p>
+            <div style=" padding-left: 110px; padding-right: 150px;">
             <a
               class="btn btn-warning mt-4"
               [routerLink]="['/event']"
+
+              style=" text-align: center;"
             >
               See all events
             </a>
           </div>
-          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6" >
             <carousel [showIndicators]="false">
               <slide>
                 <img
                   alt="First slide"
                   class="d-block w-100"
                   src="assets/img/1.jpeg"
+
+                  style=" border-radius: 30px;"
                 />
               </slide>
               <slide>
@@ -269,6 +277,8 @@
                   alt="Second slide"
                   class="d-block w-100"
                   src="assets/img/2.jpeg"
+
+                  style=" border-radius: 30px;"
                 />
               </slide>
               <slide>
@@ -276,7 +286,9 @@
                   alt="Third slide"
                   class="d-block w-100"
                   src="assets/img/3.jpeg"
-                />
+
+                  style="border-radius: 30px;"
+                  />
               </slide>
             </carousel>
           </div>
@@ -286,9 +298,12 @@
 
     <div class="section">
       <div class="container">
+        <h1 class="text-white font-weight-light" style=" align-self: center; margin: auto; margin-bottom: 50px; text-align: center;" >Our Mentor</h1>
+          
         <div class="row justify-content-between align-items-center">
           
-          <div class="col-lg-6">
+          
+          <div class="col-lg-6" style="margin: auto;"  >
             <carousel [showIndicators]="false">
               
               <slide>
@@ -296,13 +311,13 @@
                   alt="Third slide"
                   class="d-block w-1000"
                   src="assets/img/ks.jpg"
-                  style="width: 350px;"
+                  style="width: 350px; margin: auto; border-radius: 30px;"
                 />
               </slide>
             </carousel>
           </div>
           <div class="col-lg-6 mb-7 mb-lg-0">
-            <h1 class="text-white font-weight-light">Our Mentor</h1>
+            
             <p class="text-white mt-4">
               Dr. Kannan Srikanth is the Director of the Center for Information Technology and Management (CITM) and an Associate Professor at The University of Texas at Dallas, and he will now serve as the mentor for Codexe, a club dedicated to coding, technology, and collaborative problem-solving. With a wealth of experience in project management, social responsibility, and educational leadership, Dr. Srikanth provides unique insights to guide Codexe members in advancing their technical and professional skills. Dr. Srikanth’s background includes founding Ed Gurukul Enrichment Academy, an initiative promoting "full-cycle learning" in Math, Science, English, and more, and co-founding the Saptami Foundation, an organization supporting social development through talent identification and outreach programs across the US and India. He holds an MBA from Northwestern University's Kellogg School of Management and an M.S. in Computer Science from UT Dallas. His mentorship at Codexe promises to foster a culture of innovation, support
             </p>
