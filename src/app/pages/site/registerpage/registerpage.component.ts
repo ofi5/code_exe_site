@@ -5,7 +5,8 @@ import noUiSlider from 'nouislider';
 
 @Component({
   selector: "app-registerpage",
-  templateUrl: "registerpage.component.html"
+  templateUrl: "registerpage.component.html",
+  styleUrls:["registerpage.component.scss"]
 })
 export class RegisterpageComponent implements OnInit, OnDestroy, AfterViewInit {
   isCollapsed = true;

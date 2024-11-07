@@ -1,8 +1,13 @@
 <nav
   class="navbar navbar-expand-lg fixed-top navbar-transparent"
+  
   color-on-scroll="100"
   id="navbar-top"
+  [class.scrolled]="isScrolled"
+  
 >
+
+
   <div class="container">
     <div class="navbar-translate">
       <a
@@ -142,7 +147,7 @@
         alt="Raised circle image"
         class=""
         src="assets/img/Logo_CE.png"
-        style="width: 400px; height: 400px;"
+        style="width: 350px; height: 350px;"
         />
        
         <h3>
@@ -180,13 +185,17 @@
                         This event would cover various stages of data analytics project. Starting from data extraction, data cleaning, data visualization and insight generation.
                         <br>Benefit from the learnings of our Tech Officers for your Data Analytics project.
                     </p>
+                    <div style="margin-top: 20px;">
                     <a
-                    class="btn btn-warning mt-4"
+                    class=""
                     href="https://docs.google.com/forms/d/e/1FAIpQLSdDJuVbFAtocmi7xD-9eHTpeiPz7wP3RtJLqA8g0VkfP-osGg/viewform?vc=0&c=0&w=1&flr=0"
                     target="_blank"
+                    style=" color:white; padding: 12px; width: 250px; border-radius: 15px; background-color:rgb(255, 132, 0) !important;font-size: 14px; font-weight: 500; margin-top: 50px;"
+                    
                     >
                     RSVP
                     </a>
+                    </div>
                     <p class="text-white mt-4">April 8 <br> Time: 2 - 5 pm <br> Venue: SOM 2.714</p>
                 </div>
                 <div class="col-lg-6">

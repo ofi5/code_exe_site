@@ -1,0 +1,16 @@
+.card-img {
+
+    filter: hue-rotate(35deg) brightness(100%) saturate(100%);
+}
+
+.square {
+    // background-color: rgba(255, 136, 0, 0.5);
+    filter: hue-rotate(35deg) brightness(150%) saturate(0%);
+   // Adjust this value for orange tint
+    // opacity: 0.11; // Adjust opacity if needed
+  }
+
+  #navbar-top.navbar {
+    background-color:rgba(25, 1, 99, 0.25) !important;
+    }
+  
